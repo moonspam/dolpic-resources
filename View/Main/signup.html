@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=1110">
+<meta name="description" content="아이돌, 유명 연예인 SNS 이미지 모음 | 돌픽">
+<meta name="keywords" content="짤빵, 이미지, 아이돌, 유명 연예인, SNS,트위터, 인스타그램, 페이스북">
+<meta property="og:title" content="DolPic">
+<meta property="og:type" content="article">
+<meta property="og:image" content="../../images/icon.png">
+<meta property="og:description" content="아이돌, 유명 연예인 SNS 이미지 모음 | 돌픽">
+<title>돌픽 | 아이돌, 유명 연예인 SNS 이미지 모음</title>
+<link rel="stylesheet" type="text/css" href="../../css/common.css">
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script>
+$(document).ready(function() {
+	$('.vbox').dblclick(function() {
+		$('.like_box').fadeIn('swing').delay(200).fadeOut('fast');
+	});
+	$('.gbox').live({
+		mouseenter: function() {$('.gbox_thumb',this).fadeIn(300);$('.gbox_thumb',this).parent("div").addClass('transition');},
+		mouseleave: function() {$('.gbox_thumb',this).fadeOut(100);$('.gbox_thumb',this).parent("div").removeClass('transition');}
+	});
+	$('.dolpic_lbox').live({
+		mouseenter: function() {$(this).children('.dolpic_limg').addClass('ihover');},
+		mouseleave: function() {$(this).children('.dolpic_limg').removeClass('ihover');}
+	});
+});
+</script>
+</head>
+
+<body><a name="top"></a>
+<!-- 상단바 -->
+<div class="tbar">
+	<div class="wrapper">
+		<h1><a href="#"><img src="../../images/logo.png" width="18" height="18" alt="DolPic logo"> DolPic</a></h1>
+		<ul>
+			<li><a href="#">검색</a></li>
+			<li><a href="#">로그인</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- 갤러리 -->
+<div class="login_box">
+	<p>아이돌, 유명 연예인 SNS 이미지를 한 번에 모아보세요.</p>
+	<input type="text" placeholder="아이디">
+	<input type="password" placeholder="password">
+	<div class="clear"></div>
+	<div class="signup_text">
+		해당 가입 정보는 SNS 이미지<br>
+		구독 관리를 위해서만 사용됩니다.
+	</div>
+	<div class="btn_signup">회원가입</div>
+	<!-- SNS 로그인 -->
+	<div class="btn_login login_nv">네이버</div>
+	<div class="btn_login login_kk">카카오톡</div>
+	<div class="btn_login login_fb">페이스북</div>
+	<div class="signup_text"><a href="login.html" target="_self">로그인 &gt;&gt;</a></div>
+</div>
+
+</body>
+</html>

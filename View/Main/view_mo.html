@@ -1,0 +1,302 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="description" content="아이돌, 유명 연예인 SNS 이미지 모음 | 돌픽">
+<meta name="keywords" content="짤빵, 이미지, 아이돌, 유명 연예인, SNS,트위터, 인스타그램, 페이스북">
+<meta property="og:title" content="DolPic">
+<meta property="og:type" content="article">
+<meta property="og:image" content="../../images/icon.png">
+<meta property="og:description" content="아이돌, 유명 연예인 SNS 이미지 모음 | 돌픽">
+<title>돌픽 | 아이돌, 유명 연예인 SNS 이미지 모음</title>
+<link rel="stylesheet" type="text/css" href="../../css/common.m.css">
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="../../js/jquery.mobile-events.min.js"></script>
+<script>
+$(document).ready(function() {
+	var gboxDefault = ($('.gbox_gallery').width() - 24) / 3;
+	var gboxWide = ($('.gbox_gallery').width() - 40) / 5;
+	var lboxDefault = ($('.dolpic_warp .wrapper').width() - 12) / 2;
+	var lboxWide = ($('.dolpic_warp .wrapper').width() - 12) / 3;
+	if(window.innerHeight > window.innerWidth){
+		$('.gbox').css({
+			width: gboxDefault,
+			height: gboxDefault
+		});
+		$('.dolpic_lbox').css({
+			width: lboxDefault
+		});
+		$('.hot_box').removeClass('wide');
+		$('.ad_wrap').removeClass('wide');
+		$('#gboxRecmd4, #gboxRecmd5').hide();
+	} else {
+		$('.gbox').css({
+			width: gboxWide,
+			height: gboxWide
+		});
+		$('.dolpic_lbox').css({
+			width: lboxWide
+		});
+		$('.hot_box').addClass('wide');
+		$('.ad_wrap').addClass('wide');
+		$('#gboxRecmd4, #gboxRecmd5').show();
+	}
+    if($('.fbar').height() < 75) {
+		$('.fbar_wrap').removeClass('more');
+		$('.btn_more').hide();
+	} else {
+		$('.fbar_wrap').addClass('more');
+		$('.btn_more').show();
+	}
+	$('.btn_more').live('click',function() {
+		$('.fbar_wrap').removeClass('more');
+		$('.btn_more').hide();
+	});
+
+	$('.vbox').live('doubletap', function() {
+		$('.like_box').fadeIn('swing').delay(200).fadeOut('fast');
+	});
+
+	// 화면 전환시 새로고침
+	var windowWidth = $(window).width();
+	$(window).resize(function() {
+		if(windowWidth != $(window).width()){
+		location.reload();
+		return;
+		}
+	});
+});
+</script>
+</head>
+
+<body><a name="top"></a>
+<!-- 상단바 -->
+<div class="tbar">
+	<div class="wrapper">
+		<h1><a href="#"><img src="../../images/logo.png" width="20" height="20"> DolPic</a></h1>
+		<div class="btn_login" title="로그인"></div>
+	</div>
+</div>
+
+<!-- 즐겨찾기 -->
+<div class="fbar">
+	<input type="text" placeholder="검색">
+</div>
+
+<!-- 갤러리 -->
+<div class="dp_title">
+	<strong onClick="alert($(this).text());">하지원</strong>
+	<span class="tbox">구독 신청</span>
+</div>
+<div class="wrapper">
+	<div class="gbox_gallery">
+		<div class="vbox">
+			<div class="like_box" style="display:none"></div>
+			<img src="https://pbs.twimg.com/media/AswYYsmCMAAnrCf.jpg:large">
+			<div class="txt_box">
+				<article>신줏단지 모시듯 가지고 다니다 배고프고 목말라진 짱구가 자기도 모르고 껍질을 까버릴 뻔 한 사랑의 귤</article>
+			</div>
+			<div class="wrong_pic">해당 이미지가 잘못되었으면 <a href="#">여기</a>를 눌러주세요. 출처:Twitter</div>
+		</div>
+		<div class="clear"></div>
+		<!-- 갤러리 네비게이션 -->
+		<ul class="gbox_list">
+			<li>메인</li>
+			<li>&lt; 이전</li>
+			<li>다음 &gt;</li>
+		</ul>
+		<div class="btn_good on">좋아요</div>
+		<div class="clear"></div>
+
+		<div class="vbox_stitle"><img src="../../images/icon_like_b.png" width="30" height="20">하지원 추천 이미지</div>
+		<div class="gbox_recommend">
+			<div id="gboxRecmd1" class="gbox" style="background:url(https://pbs.twimg.com/media/B0r8fJmCIAErsoR.jpg) center center no-repeat;background-size:cover"></div>
+			<div id="gboxRecmd2" class="gbox" style="background:url(https://pbs.twimg.com/media/B8bQ7yrCcAE9-vl.jpg) center center no-repeat;background-size:cover"></div>
+			<div id="gboxRecmd3" class="gbox" style="background:url(https://pbs.twimg.com/media/B6Q4dOqCUAAPIV3.jpg) center center no-repeat;background-size:cover"></div>
+			<div id="gboxRecmd4" class="gbox" style="background:url(https://pbs.twimg.com/media/B0r8fJmCIAErsoR.jpg) center center no-repeat;background-size:cover"></div>
+			<div id="gboxRecmd5" class="gbox" style="background:url(https://pbs.twimg.com/media/B8bQ7yrCcAE9-vl.jpg) center center no-repeat;background-size:cover"></div>
+		</div>
+		<div class="clear"></div>
+		<!-- Disqus -->
+		<img src="../../images/sample_disqus.png" width="100%">
+	</div>
+</div>
+
+<div class="gbox_side">
+	<ul class="hot_box">
+		<li class="title">오늘의 핫돌픽</li>
+		<li><img src="../../images/num_1.png" width="16" height="16" alt="1"> <a href="#">써니</a> <span>1,232,333 <img src="../../images/icon_like.png" height="16"></span></li>
+		<li><img src="../../images/num_2.png" width="16" height="16" alt="2"> <a href="#">인피니트</a> <span>12,323 <img src="../../images/icon_like.png" height="16"></span></li>
+		<li><img src="../../images/num_3.png" width="16" height="16" alt="3"> <a href="#">나나</a> <span>1,232 <img src="../../images/icon_like.png" height="16"></span></li>
+		<li><img src="../../images/num_4.png" width="16" height="16" alt="4"> <a href="#">엑소</a> <span>333 <img src="../../images/icon_like.png" height="16"></span></li>
+		<li><img src="../../images/num_5.png" width="16" height="16" alt="5"> <a href="#">강남</a> <span>33 <img src="../../images/icon_like.png" height="16"></span></li>
+	</ul>
+	<!-- 구글 광고 -->
+	<div class="ad_wrap">
+		<div class="ad_box">
+			<img src="../../images/sample_ad.png" width="300" height="250">
+		</div>
+	</div>
+	<div class="copyright">&copy; 2015 DolPic | <a href="#">Feedback</a></div>
+</div>
+<div class="clear"></div>
+
+<!-- 하단 리스트 -->
+<div class="dolpic_warp">
+	<div class="go_top" onClick="location.href='#top'"></div>
+	<div class="wrapper">
+		<!-- 리스트 박스 -->
+		<div class="dolpic_lbox">
+			<div class="dolpic_limg" style="background:url(https://pbs.twimg.com/media/B6Q4dOqCUAAPIV3.jpg) center center no-repeat;background-size:cover"></div>
+			<div class="dolpic_lname">에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑</div>
+			<div class="dolpic_lsscpt">999,999 구독 중</div>
+			<span class="tbox">구독 신청</span>
+		</div>
+		<div class="dolpic_lbox">
+			<div class="dolpic_limg" style="background:url(https://pbs.twimg.com/media/B0r8fJmCIAErsoR.jpg) center center no-repeat;background-size:cover"></div>
+			<div class="dolpic_lname">에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑</div>
+			<div class="dolpic_lsscpt">999,999 구독 중</div>
+			<span class="tbox disable">구독 해지</span>
+		</div>
+		<div class="dolpic_lbox">
+			<div class="dolpic_limg" style="background:url(https://pbs.twimg.com/media/B8bQ7yrCcAE9-vl.jpg) center center no-repeat;background-size:cover"></div>
+			<div class="dolpic_lname">에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑</div>
+			<div class="dolpic_lsscpt">999,999 구독 중</div>
+			<span class="tbox">구독 신청</span>
+		</div>
+		<div class="dolpic_lbox">
+			<div class="dolpic_limg" style="background:url(https://pbs.twimg.com/media/B6Q4dOqCUAAPIV3.jpg) center center no-repeat;background-size:cover"></div>
+			<div class="dolpic_lname">에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑</div>
+			<div class="dolpic_lsscpt">999,999 구독 중</div>
+			<span class="tbox disable">구독 해지</span>
+		</div>
+		<div class="dolpic_lbox">
+			<div class="dolpic_limg" style="background:url(https://pbs.twimg.com/media/B0r8fJmCIAErsoR.jpg) center center no-repeat;background-size:cover"></div>
+			<div class="dolpic_lname">에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑</div>
+			<div class="dolpic_lsscpt">999,999 구독 중</div>
+			<span class="tbox">구독 신청</span>
+		</div>
+		<div class="dolpic_lbox">
+			<div class="dolpic_limg" style="background:url(https://pbs.twimg.com/media/B8bQ7yrCcAE9-vl.jpg) center center no-repeat;background-size:cover"></div>
+			<div class="dolpic_lname">에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑</div>
+			<div class="dolpic_lsscpt">999,999 구독 중</div>
+			<span class="tbox">구독 신청</span>
+		</div>
+		<div class="dolpic_lbox">
+			<div class="dolpic_limg" style="background:url(https://pbs.twimg.com/media/B6Q4dOqCUAAPIV3.jpg) center center no-repeat;background-size:cover"></div>
+			<div class="dolpic_lname">에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑</div>
+			<div class="dolpic_lsscpt">999,999 구독 중</div>
+			<span class="tbox disable">구독 해지</span>
+		</div>
+		<div class="dolpic_lbox">
+			<div class="dolpic_limg" style="background:url(https://pbs.twimg.com/media/B0r8fJmCIAErsoR.jpg) center center no-repeat;background-size:cover"></div>
+			<div class="dolpic_lname">에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑</div>
+			<div class="dolpic_lsscpt">999,999 구독 중</div>
+			<span class="tbox">구독 신청</span>
+		</div>
+		<div class="dolpic_lbox">
+			<div class="dolpic_limg" style="background:url(https://pbs.twimg.com/media/B8bQ7yrCcAE9-vl.jpg) center center no-repeat;background-size:cover"></div>
+			<div class="dolpic_lname">에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑</div>
+			<div class="dolpic_lsscpt">999,999 구독 중</div>
+			<span class="tbox">구독 신청</span>
+		</div>
+		<div class="dolpic_lbox">
+			<div class="dolpic_limg" style="background:url(https://pbs.twimg.com/media/B6Q4dOqCUAAPIV3.jpg) center center no-repeat;background-size:cover"></div>
+			<div class="dolpic_lname">에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑</div>
+			<div class="dolpic_lsscpt">999,999 구독 중</div>
+			<span class="tbox disable">구독 해지</span>
+		</div>
+		<div class="dolpic_lbox">
+			<div class="dolpic_limg" style="background:url(https://pbs.twimg.com/media/B0r8fJmCIAErsoR.jpg) center center no-repeat;background-size:cover"></div>
+			<div class="dolpic_lname">에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑</div>
+			<div class="dolpic_lsscpt">999,999 구독 중</div>
+			<span class="tbox">구독 신청</span>
+		</div>
+		<div class="dolpic_lbox">
+			<div class="dolpic_limg" style="background:url(https://pbs.twimg.com/media/B8bQ7yrCcAE9-vl.jpg) center center no-repeat;background-size:cover"></div>
+			<div class="dolpic_lname">에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑</div>
+			<div class="dolpic_lsscpt">999,999 구독 중</div>
+			<span class="tbox">구독 신청</span>
+		</div>
+		<div class="dolpic_lbox">
+			<div class="dolpic_limg" style="background:url(https://pbs.twimg.com/media/B6Q4dOqCUAAPIV3.jpg) center center no-repeat;background-size:cover"></div>
+			<div class="dolpic_lname">에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑</div>
+			<div class="dolpic_lsscpt">999,999 구독 중</div>
+			<span class="tbox disable">구독 해지</span>
+		</div>
+		<div class="dolpic_lbox">
+			<div class="dolpic_limg" style="background:url(https://pbs.twimg.com/media/B0r8fJmCIAErsoR.jpg) center center no-repeat;background-size:cover"></div>
+			<div class="dolpic_lname">에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑</div>
+			<div class="dolpic_lsscpt">999,999 구독 중</div>
+			<span class="tbox">구독 신청</span>
+		</div>
+		<div class="dolpic_lbox">
+			<div class="dolpic_limg" style="background:url(https://pbs.twimg.com/media/B8bQ7yrCcAE9-vl.jpg) center center no-repeat;background-size:cover"></div>
+			<div class="dolpic_lname">에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑</div>
+			<div class="dolpic_lsscpt">999,999 구독 중</div>
+			<span class="tbox">구독 신청</span>
+		</div>
+		<div class="dolpic_lbox">
+			<div class="dolpic_limg" style="background:url(https://pbs.twimg.com/media/B6Q4dOqCUAAPIV3.jpg) center center no-repeat;background-size:cover"></div>
+			<div class="dolpic_lname">에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑</div>
+			<div class="dolpic_lsscpt">999,999 구독 중</div>
+			<span class="tbox disable">구독 해지</span>
+		</div>
+		<div class="dolpic_lbox">
+			<div class="dolpic_limg" style="background:url(https://pbs.twimg.com/media/B0r8fJmCIAErsoR.jpg) center center no-repeat;background-size:cover"></div>
+			<div class="dolpic_lname">에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑</div>
+			<div class="dolpic_lsscpt">999,999 구독 중</div>
+			<span class="tbox">구독 신청</span>
+		</div>
+		<div class="dolpic_lbox">
+			<div class="dolpic_limg" style="background:url(https://pbs.twimg.com/media/B8bQ7yrCcAE9-vl.jpg) center center no-repeat;background-size:cover"></div>
+			<div class="dolpic_lname">에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑</div>
+			<div class="dolpic_lsscpt">999,999 구독 중</div>
+			<span class="tbox">구독 신청</span>
+		</div>
+		<div class="dolpic_lbox">
+			<div class="dolpic_limg" style="background:url(https://pbs.twimg.com/media/B6Q4dOqCUAAPIV3.jpg) center center no-repeat;background-size:cover"></div>
+			<div class="dolpic_lname">에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑</div>
+			<div class="dolpic_lsscpt">999,999 구독 중</div>
+			<span class="tbox disable">구독 해지</span>
+		</div>
+		<div class="dolpic_lbox">
+			<div class="dolpic_limg" style="background:url(https://pbs.twimg.com/media/B0r8fJmCIAErsoR.jpg) center center no-repeat;background-size:cover"></div>
+			<div class="dolpic_lname">에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑</div>
+			<div class="dolpic_lsscpt">999,999 구독 중</div>
+			<span class="tbox">구독 신청</span>
+		</div>
+		<div class="dolpic_lbox">
+			<div class="dolpic_limg" style="background:url(https://pbs.twimg.com/media/B8bQ7yrCcAE9-vl.jpg) center center no-repeat;background-size:cover"></div>
+			<div class="dolpic_lname">에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑</div>
+			<div class="dolpic_lsscpt">999,999 구독 중</div>
+			<span class="tbox">구독 신청</span>
+		</div>
+		<div class="dolpic_lbox">
+			<div class="dolpic_limg" style="background:url(https://pbs.twimg.com/media/B6Q4dOqCUAAPIV3.jpg) center center no-repeat;background-size:cover"></div>
+			<div class="dolpic_lname">에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑</div>
+			<div class="dolpic_lsscpt">999,999 구독 중</div>
+			<span class="tbox disable">구독 해지</span>
+		</div>
+		<div class="dolpic_lbox">
+			<div class="dolpic_limg" style="background:url(https://pbs.twimg.com/media/B0r8fJmCIAErsoR.jpg) center center no-repeat;background-size:cover"></div>
+			<div class="dolpic_lname">에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑</div>
+			<div class="dolpic_lsscpt">999,999 구독 중</div>
+			<span class="tbox">구독 신청</span>
+		</div>
+		<div class="dolpic_lbox">
+			<div class="dolpic_limg" style="background:url(https://pbs.twimg.com/media/B6Q4dOqCUAAPIV3.jpg) center center no-repeat;background-size:cover"></div>
+			<div class="dolpic_lname">에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑에이핑크핑크핑</div>
+			<div class="dolpic_lsscpt">999,999 구독 중</div>
+			<span class="tbox disable">구독 해지</span>
+		</div>
+	
+		<div class="clear"></div>
+	</div>
+	<div class="sponsor">돌픽은 SNS 이미지를 모아주는 사이트입니다.</div>
+	<div class="sponsor">Icons made by <a href="http://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
+</div>
+
+</body>
+</html>
